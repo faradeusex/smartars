@@ -1,24 +1,12 @@
-// Меню бургер
+// Меню для мобильных устройств
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
+
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
-  menuToggle.classList.toggle('active');
 });
 
-// Плавный скролл по меню
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    navLinks.classList.remove('active');
-    menuToggle.classList.remove('active');
-
-    const target = document.querySelector(link.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-// Лайтбокс для галереи
+// Галерея (Lightbox)
 const galleryImages = document.querySelectorAll('.gallery-grid img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('.lightbox-img');
@@ -42,7 +30,7 @@ lightbox.addEventListener('click', e => {
   if (e.target === lightbox) lightbox.style.display = 'none';
 });
 
-// Модальное окно заказа
+// Скролл к форме заказа
 const orderBtn = document.getElementById('order-btn');
 const orderSection = document.getElementById('order');
 
@@ -52,25 +40,35 @@ orderBtn.addEventListener('click', () => {
 
 // Валидация формы заказа
 const orderForm = document.getElementById('order-form');
+
 orderForm.addEventListener('submit', e => {
   e.preventDefault();
+
   if (!orderForm.checkValidity()) {
     alert('Пожалуйста, заполните все поля правильно.');
     return;
   }
-  alert(`Спасибо, ${orderForm.name.value}! Ваша заявка на "${orderForm.product.value}" принята.`);
+
+  const name = orderForm.name.value;
+  const product = orderForm.product.value;
+
+  alert(`Спасибо, ${name}! Ваша заявка на "${product}" принята. Мы скоро с вами свяжемся.`);
+
   orderForm.reset();
 });
 
-// Анимация появления блоков при скролле
+// Анимации при скролле (IntersectionObserver)
 const sections = document.querySelectorAll('.section, .hero-content');
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
+    if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.3 });
+}, {
+  threshold: 0.2
+});
 
 sections.forEach(section => {
   section.classList.add('hidden');
