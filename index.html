@@ -3,104 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Эксклюзивные продукты — Faradeusex</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <title>SmartARS - Эксклюзивные ручки для мебели</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <nav class="nav container">
+      <div class="logo">SmartARS</div>
+      <ul class="nav-links">
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#order">Заказать</a></li>
+      </ul>
+      <div class="burger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
 
-<header class="header">
-  <nav class="nav container">
-    <div class="logo">Faradeusex</div>
-    <ul class="nav-links">
-      <li><a href="#about">О продукте</a></li>
-      <li><a href="#prices">Цены</a></li>
-      <li><a href="#order">Заказать</a></li>
-      <li><a href="#contacts">Контакты</a></li>
-    </ul>
-    <button class="burger" aria-label="Меню">&#9776;</button>
-  </nav>
-</header>
+  <section class="hero container">
+    <h1>Эксклюзивные ручки под заказ для вашей мебели</h1>
+    <p>Ручки с натуральной кожей, металлом и эксклюзивными материалами — создаём стиль и уют в каждом доме</p>
+    <a href="#order" class="btn-primary">Оставить заявку</a>
+  </section>
 
-<section id="about" class="hero container">
-  <h1>Эксклюзивные продукты <br/> для избранных клиентов</h1>
-  <p>Уникальные решения с заботой о качестве и стиле.</p>
-  <a href="#order" class="btn">Оставить заявку</a>
-</section>
+  <section id="gallery" class="gallery container">
+    <h2>Наши эксклюзивные ручки</h2>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="leather">Кожа</button>
+      <button class="filter-btn" data-filter="metal">Металл</button>
+      <button class="filter-btn" data-filter="combo">Комбинированные</button>
+    </div>
+    <div class="cards">
+      <div class="card" data-type="leather">
+        <img src="https://images.unsplash.com/photo-1609870172759-81b56e4696b2?auto=format&fit=crop&w=400&q=80" alt="Ручка с кожаной обивкой" />
+        <h3>Ручка с кожаной обивкой</h3>
+        <p>Натуральная кожа премиум-класса с мягкой фактурой для стильной мебели.</p>
+        <p class="price">от 3 000 ₽</p>
+      </div>
+      <div class="card" data-type="metal">
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80" alt="Металлическая ручка" />
+        <h3>Металлическая ручка</h3>
+        <p>Высококачественный металл с глянцевой или матовой поверхностью для современного дизайна.</p>
+        <p class="price">от 4 500 ₽</p>
+      </div>
+      <div class="card" data-type="combo">
+        <img src="https://images.unsplash.com/photo-1590080877777-166374a553c1?auto=format&fit=crop&w=400&q=80" alt="Комбинированная ручка" />
+        <h3>Комбинированная ручка</h3>
+        <p>Уникальное сочетание кожи и металла, подчеркивающее эксклюзивность вашего интерьера.</p>
+        <p class="price">от 6 000 ₽</p>
+      </div>
+      <div class="card" data-type="leather">
+        <img src="https://images.unsplash.com/photo-1513708928674-3ffb67d7ff4b?auto=format&fit=crop&w=400&q=80" alt="Ручка с темной кожей" />
+        <h3>Ручка с темной кожей</h3>
+        <p>Элегантная темная кожа с деликатной фактурой для классической мебели.</p>
+        <p class="price">от 3 500 ₽</p>
+      </div>
+    </div>
+  </section>
+  <section id="calculator" class="calculator container">
+  <h2>Калькулятор стоимости ручки</h2>
+  <form id="calcForm">
+    <label>Тип ручки:
+      <select name="type" required>
+        <option value="leather">Ручка с кожей</option>
+        <option value="metal">Металлическая ручка</option>
+        <option value="combo">Комбинированная ручка</option>
+      </select>
+    </label>
 
-<section id="prices" class="prices container">
-  <h2>Наши продукты и цены</h2>
-  <div class="price-list">
-    <div class="price-item">
-      <h3>Базовый пакет</h3>
-      <p>Идеально для старта и минималистов.</p>
-      <p class="price">от 15 000 ₽</p>
-    </div>
-    <div class="price-item">
-      <h3>Премиум пакет</h3>
-      <p>Максимальное качество и индивидуальность.</p>
-      <p class="price">от 45 000 ₽</p>
-    </div>
-    <div class="price-item">
-      <h3>Эксклюзивный пакет</h3>
-      <p>Уникальный продукт, созданный только для вас.</p>
-      <p class="price">от 90 000 ₽</p>
-    </div>
-  </div>
-</section>
-<section id="gallery" class="gallery container">
-  <h2>Наши эксклюзивные ручки</h2>
-  
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">Все</button>
-    <button class="filter-btn" data-filter="leather">Кожа</button>
-    <button class="filter-btn" data-filter="metal">Металл</button>
-    <button class="filter-btn" data-filter="combo">Комбинированные</button>
-  </div>
-  
-  <div class="cards">
-    <div class="card" data-type="leather">
-      <img src="https://images.unsplash.com/photo-1609870172759-81b56e4696b2?auto=format&fit=crop&w=400&q=80" alt="Ручка с кожаной обивкой" />
-      <h3>Ручка с кожаной обивкой</h3>
-      <p>Ручка из натуральной кожи с аккуратной отделкой — подходит для мебели с кожаной обивкой.</p>
-      <p class="price">от 3 000 ₽</p>
-    </div>
-    <div class="card" data-type="metal">
-      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80" alt="Металлическая ручка" />
-      <h3>Металлическая ручка</h3>
-      <p>Современный дизайн из высококачественного металла, с глянцевой или матовой поверхностью.</p>
-      <p class="price">от 4 500 ₽</p>
-    </div>
-    <div class="card" data-type="combo">
-      <img src="https://images.unsplash.com/photo-1590080877777-166374a553c1?auto=format&fit=crop&w=400&q=80" alt="Ручка комбинированная" />
-      <h3>Комбинированная ручка</h3>
-      <p>Эксклюзив с кожей и металлом, сочетает стиль и функциональность.</p>
-      <p class="price">от 6 000 ₽</p>
-    </div>
-    <div class="card" data-type="leather">
-      <img src="https://images.unsplash.com/photo-1513708928674-3ffb67d7ff4b?auto=format&fit=crop&w=400&q=80" alt="Ручка с темной кожей" />
-      <h3>Ручка с темной кожей</h3>
-      <p>Элегантная темная кожа с мягкой фактурой для классической мебели.</p>
-      <p class="price">от 3 500 ₽</p>
-    </div>
-  </div>
-</section>
+    <label>Материал кожи:
+      <select name="leatherMaterial" id="leatherMaterial">
+        <option value="premium">Премиум кожа (+0 ₽)</option>
+        <option value="classic">Классическая кожа (-500 ₽)</option>
+        <option value="экзотическая">Экзотическая кожа (+1500 ₽)</option>
+      </select>
+    </label>
 
-<section id="order" class="order container">
-  <h2>Оставьте заявку на заказ</h2>
-  <form id="orderForm" novalidate>
-    <input type="text" id="name" name="name" placeholder="Ваше имя" required />
-    <input type="tel" id="phone" name="phone" placeholder="Телефон" pattern="^\+?\d{10,15}$" required />
-    <textarea id="comment" name="comment" placeholder="Комментарий (не обязательно)" rows="4"></textarea>
-    <button type="submit" class="btn">Отправить заявку</button>
+    <button type="submit" class="btn-primary">Рассчитать</button>
   </form>
+  <p id="calcResult" style="margin-top: 20px; font-weight: 600;"></p>
 </section>
 
-<footer id="contacts" class="footer container">
-  <p>info@faradeusex.com | +7 999 123 45 67</p>
-  <p>© 2025 Faradeusex</p>
-</footer>
 
-<script src="script.js"></script>
+  <section id="about" class="about container">
+    <h2>О нашей компании</h2>
+    <p>SmartARS — это мастерская эксклюзивных мебельных ручек с уникальным дизайном и качеством. Мы специализируемся на создании ручек с натуральной кожей и премиальными материалами под заказ. Каждый заказ — это индивидуальный подход и максимальное внимание к деталям.</p>
+  </section>
+
+  <section id="order" class="order container">
+    <h2>Оставьте заявку на заказ</h2>
+    <form id="orderForm">
+      <input type="text" name="name" placeholder="Ваше имя" required minlength="2" />
+      <input type="tel" name="phone" placeholder="Телефон (+7XXXXXXXXXX)" required pattern="^\+?\d{10,15}$" />
+      <textarea name="comment" placeholder="Комментарий (например, материал, дизайн)" rows="4"></textarea>
+      <button type="submit" class="btn-primary">Отправить заявку</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 SmartARS. Все права защищены.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
