@@ -43,3 +43,24 @@ form.addEventListener('submit', e => {
 
   form.reset();
 });
+// Фильтрация карточек по материалу
+const filterButtons = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.card');
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Снимаем активность с кнопок
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.getAttribute('data-filter');
+
+    cards.forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-type') === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
