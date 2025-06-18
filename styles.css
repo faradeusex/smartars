@@ -1,174 +1,366 @@
-/* === БАЗА === */
+/* Базовые стили и шрифты */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: #fefbf7;
-  color: #333;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* === ШАПКА === */
-.header {
-  background: #ffffffdd;
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
+  background: #f9f6f1 url('https://www.transparenttextures.com/patterns/marble.png') repeat; /* лёгкий мрамор */
+  color: #4b3b2b;
+  line-height: 1.6;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* --- ХЕДЕР --- */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: linear-gradient(90deg, #d8b480, #f3e9d2);
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1500;
 }
 
 .logo {
+  font-weight: 700;
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #008b8b;
+  color: #a2640a; /* янтарный */
+  letter-spacing: 2px;
+  user-select: none;
 }
 
-.navbar .nav-list {
-  display: flex;
+/* Кнопка меню */
+.menu-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #6b4f2e;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.menu-btn:hover {
+  color: #a2640a;
+}
+
+/* --- Сайдбар меню --- */
+.sidebar {
+  position: fixed;
+  top: 60px; /* чуть ниже хедера */
+  left: -280px;
+  width: 280px;
+  height: calc(100vh - 60px);
+  background: linear-gradient(135deg, #f3e9d2, #d8b480);
+  box-shadow: 3px 0 10px rgba(0,0,0,0.12);
+  padding: 2rem 1.5rem;
+  transition: left 0.4s ease;
+  z-index: 1400;
+  overflow-y: auto;
+  border-right: 2px solid #a2640a;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar ul li a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #6b4f2e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  color: #a2640a;
+  text-shadow: 0 0 4px #a2640a88;
+}
+
+/* --- Основной контент --- */
+main {
+  margin-top: 60px; /* отступ под фиксированный хедер */
+  padding: 2rem 1rem;
+  flex-grow: 1;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Общие стили секций */
+.section {
+  margin-bottom: 5rem;
+  padding: 2rem;
+  background: rgba(255, 245, 230, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgb(162 134 71 / 0.25);
+  position: relative;
+}
+
+/* Фон с рисунком мебели для каждой секции */
+.section-about {
+  background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #3a2e1e;
+  text-shadow: 0 0 5px #fff8e1;
+}
+
+.section-products {
+  background-image: url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #4b3b2b;
+  text-shadow: 0 0 5px #fef6e4;
+}
+
+.section-configurator {
+  background-image: url('https://images.unsplash.com/photo-1544707302-7a2d5404a04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #4b3b2b;
+  text-shadow: 0 0 5px #f9f1d4;
+}
+
+.section-catalog {
+  background-image: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #3a2e1e;
+  text-shadow: 0 0 5px #fef6e4;
+}
+
+.section-order {
+  background-image: url('https://images.unsplash.com/photo-1516375195446-65b67d85e99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #4b3b2b;
+  text-shadow: 0 0 5px #f9f1d4;
+}
+
+.section-gallery {
+  background-image: url('https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #3a2e1e;
+  text-shadow: 0 0 5px #fff8e1;
+}
+
+.section-clients {
+  background-image: url('https://images.unsplash.com/photo-1542744173-05336fcc7ad4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #4b3b2b;
+  text-shadow: 0 0 5px #f9f1d4;
+}
+
+/* Заголовки */
+h1, h2 {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  color: #a2640a;
+  text-shadow: 0 1px 2px #ffffffaa;
+}
+
+/* Список "О нас" */
+.about-list {
+  list-style: none;
+  padding-left: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 25px;
+  font-weight: 500;
+  color: #4b3b2b;
+}
+
+.about-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #a2640a;
+  font-weight: 700;
+}
+
+/* Каталог */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+  gap: 1.6rem;
+}
+
+/* Карточка продукта */
+.catalog-item {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgb(162 134 71 / 0.15);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.catalog-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgb(162 134 71 / 0.3);
+}
+
+.catalog-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  object-fit: cover;
+  height: 160px;
+}
+
+/* Описание */
+.catalog-item .desc {
+  font-weight: 600;
+  color: #6b4f2e;
+}
+
+/* Форма заказа */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 245, 230, 0.95);
+  padding: 1.8rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 24px rgb(162 134 71 / 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1.8px solid #d7c9af;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #a2640a;
+  box-shadow: 0 0 5px #a2640a99;
+}
+
+button[type="submit"] {
+  background: linear-gradient(45deg, #a2640a, #d8b480);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(45deg, #d8b480, #a2640a);
+}
+
+/* Галерея */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+  gap: 1.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgb(162 134 71 / 0.2);
+  object-fit: cover;
+  height: 180px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 12px 25px rgb(162 134 71 / 0.4);
+}
+
+/* Логотипы клиентов */
+.clients-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 
-.navbar .nav-link {
-  font-weight: 600;
-  transition: 0.3s ease;
+.clients-logos img {
+  max-height: 60px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
-.navbar .nav-link:hover {
-  color: #c08429;
-}
-
-/* === ОБЛОЖКА === */
-.hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #fefbf7, #ece1d3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-top: 80px;
-}
-
-.hero-content {
-  max-width: 700px;
-  animation: fadeIn 1.5s ease-out;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #3c2f2f;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #5e5e5e;
-}
-
-.order-scroll-btn {
-  padding: 0.8rem 1.5rem;
-  background: #008b8b;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.order-scroll-btn:hover {
-  background: #00a5a5;
-}
-
-/* === СЕКЦИИ === */
-.section {
-  padding: 5rem 2rem;
+.clients-logos img:hover {
   opacity: 1;
-  transition: opacity 0.5s ease;
 }
 
-.section.hidden {
-  opacity: 0;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #2d2d2d;
-}
-
-p {
-  font-size: 1rem;
-  max-width: 700px;
-  margin: auto;
-}
-
-/* === FOOTER === */
-.footer {
-  padding: 2rem;
-  text-align: center;
-  background: #f3ede5;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-/* === ЭФФЕКТ ПОЛКИ === */
-.shelf-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ece1d3;
-  z-index: 9999;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  animation: none;
-}
-
-.shelf-door {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #dbcdbb, #d3b18c);
-  transform-origin: left;
-  transform: scaleX(0);
-  transition: transform 0.7s ease-in-out;
-}
-
-.shelf-overlay.open .shelf-door {
-  transform: scaleX(1);
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(40px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* === АДАПТАЦИЯ === */
+/* Мобильная адаптация */
 @media (max-width: 768px) {
-  .navbar .nav-list {
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    display: none;
+  main {
+    padding: 1rem 0.8rem;
   }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+  }
+
+  form {
+    max-width: 100%;
+    padding: 1rem 1.2rem;
+  }
+}
+
+/* Скроллбар для сайдбара */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f3e9d2;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #a2640a;
+  border-radius: 10px;
+  border: 2px solid #f3e9d2;
 }

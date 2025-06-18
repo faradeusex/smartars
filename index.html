@@ -2,58 +2,116 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SmartARS | Дизайнерские ручки</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartARS — Эксклюзивные ручки для мебели</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header class="header">
-    <div class="logo">SmartARS</div>
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li><a href="#home" class="nav-link">Главная</a></li>
-        <li><a href="#about" class="nav-link">О нас</a></li>
-        <li><a href="#products" class="nav-link">Продукты</a></li>
-        <li><a href="#order" class="nav-link">Заказ</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Эффектная обложка -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Эксклюзивные ручки для мебели</h1>
-      <p>Сделано вручную. Кожа. Металл. Искусство.</p>
-      <button class="order-scroll-btn">Заказать</button>
+<header class="header">
+  <div class="logo">SmartARS</div>
+  <button id="menu-btn" class="menu-btn" aria-label="Открыть меню">&#9776;</button>
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="#about" class="nav-link">О нас</a></li>
+      <li><a href="#products" class="nav-link">Наши продукты</a></li>
+      <li><a href="#configurator" class="nav-link">Конфигуратор</a></li>
+      <li><a href="#catalog" class="nav-link">Готовые модели</a></li>
+      <li><a href="#order" class="nav-link">Заказ</a></li>
+      <li><a href="#gallery" class="nav-link">Галерея</a></li>
+      <li><a href="#clients" class="nav-link">Заказчики</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- О нас -->
+  <section id="about" class="section section-about">
+    <h1>О нас</h1>
+    <ul class="about-list">
+      <li>Эксклюзивные ручки для мебели с кожаной отделкой</li>
+      <li>Используем только натуральные материалы премиум-класса</li>
+      <li>Индивидуальный подход к каждому заказу</li>
+      <li>Ручная работа опытных мастеров</li>
+      <li>Доставка и установка по всей России</li>
+      <li>Гарантия качества и долговечности</li>
+    </ul>
+  </section>
+
+  <!-- Наши продукты -->
+  <section id="products" class="section section-products">
+    <h2>Наши продукты</h2>
+    <p>Ручки из натуральной кожи, металла и редких материалов для создания уникальной мебели.</p>
+    <!-- Можно добавить изображения, описания -->
+  </section>
+
+  <!-- Конфигуратор -->
+  <section id="configurator" class="section section-configurator">
+    <h2>Конфигуратор ручек</h2>
+    <div id="configurator-app">
+      <!-- Конфигуратор будет рендериться скриптом -->
+      <p>Загрузка конфигуратора...</p>
     </div>
   </section>
 
-  <!-- Полка-анимация -->
-  <div id="shelf-animation" class="shelf-overlay">
-    <div class="shelf-door"></div>
-  </div>
-
-  <!-- Заготовка для других блоков -->
-  <section id="about" class="section hidden">
-    <h2>О нас</h2>
-    <p>SmartARS — это мастерская дизайнерских решений. Мы создаём мебельные ручки с душой.</p>
+  <!-- Готовые модели -->
+  <section id="catalog" class="section section-catalog">
+    <h2>Готовые модели</h2>
+    <div class="catalog-grid">
+      <!-- Модели будут добавлены через JS с анимацией -->
+    </div>
   </section>
 
-  <section id="products" class="section hidden">
-    <h2>Наши продукты</h2>
-    <p>Каждое изделие — это премиум-класс: кожа, медь, бронза, дерево.</p>
+  <!-- Форма заказа -->
+  <section id="order" class="section section-order">
+    <h2>Заказать ручки</h2>
+    <form id="order-form" novalidate>
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" required placeholder="Ваше имя" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required placeholder="example@mail.com" />
+
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__" />
+
+      <label for="product">Выберите продукт:</label>
+      <select id="product" name="product" required>
+        <option value="">-- Выберите --</option>
+        <option value="classic">Классические ручки</option>
+        <option value="premium">Премиум серия</option>
+        <option value="custom">Индивидуальный заказ</option>
+      </select>
+
+      <label for="message">Комментарий:</label>
+      <textarea id="message" name="message" placeholder="Ваши пожелания"></textarea>
+
+      <button type="submit">Отправить заказ</button>
+    </form>
   </section>
 
-  <section id="order" class="section hidden">
-    <h2>Сделать заказ</h2>
-    <p>Выберите модель и оставьте заявку — мы свяжемся с вами!</p>
+  <!-- Галерея -->
+  <section id="gallery" class="section section-gallery">
+    <h2>Галерея</h2>
+    <div class="gallery-grid">
+      <!-- Фотографии дизайнерских кухонь и ручек -->
+    </div>
   </section>
 
-  <footer class="footer">
-    <p>© 2025 SmartARS. Все права защищены.</p>
-  </footer>
+  <!-- Заказчики -->
+  <section id="clients" class="section section-clients">
+    <h2>Наши заказчики</h2>
+    <div class="clients-logos">
+      <!-- Логотипы, отзывы, карусель -->
+    </div>
+  </section>
+</main>
 
-  <script src="scripts.js"></script>
+<footer class="footer">
+  <p>© 2025 SmartARS — эксклюзивные ручки для вашей мебели</p>
+</footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>
