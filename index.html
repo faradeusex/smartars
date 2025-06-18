@@ -1,98 +1,113 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Exquisite Handles — Эксклюзивные мебельные ручки</title>
-<link rel="stylesheet" href="styles.css" />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartARS - Эксклюзивные ручки с кожей</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">SmartARS</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#products">Продукты</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#order">Заказать</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
 
-<!-- Ручка-меню -->
-<div id="handle-menu" title="Потяни за ручку">
-  <div class="handle-bar"></div>
-</div>
-
-<nav id="side-nav" aria-label="Главное меню">
-  <ul>
-    <li><a href="#hero">Главная</a></li>
-    <li><a href="#gallery">Галерея</a></li>
-    <li><a href="#prices">Цены</a></li>
-    <li><a href="#order">Заказать</a></li>
-    <li><a href="#contacts">Контакты</a></li>
-  </ul>
-</nav>
-
-<main>
-  <section id="hero" class="section hero">
-    <h1>Exquisite Handles</h1>
-    <p>Изысканные ручки для мебели — сделаем вашу мебель шедевром.</p>
-    <button id="orderBtn">Заказать сейчас</button>
-  </section>
-
-  <section id="gallery" class="section">
-    <h2>Галерея эксклюзива</h2>
-    <div class="gallery-grid">
-      <figure tabindex="0">
-        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=400&q=80" alt="Ручка с кожей янтарного оттенка" />
-        <figcaption>Кожаная ручка янтарного цвета — натуральная кожа высшего качества</figcaption>
-      </figure>
-      <figure tabindex="0">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Металлическая ручка с бирюзовой эмалью" />
-        <figcaption>Металлическая ручка с бирюзовой эмалью — современный стиль и надежность</figcaption>
-      </figure>
-      <figure tabindex="0">
-        <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?auto=format&fit=crop&w=400&q=80" alt="Комбинированная ручка с кожей и металлом" />
-        <figcaption>Комбинированная ручка с натуральной кожей и матовым металлом</figcaption>
-      </figure>
-      <figure tabindex="0">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Ручка с янтарным покрытием и инкрустацией" />
-        <figcaption>Ручка с янтарным покрытием и тонкой инкрустацией — настоящее искусство</figcaption>
-      </figure>
+  <section class="hero" id="hero">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="https://cdn.pixabay.com/vimeo/323850539/Background%20Luxury%20Motion%20Graphics%20%233605%20-%2051800.mp4" type="video/mp4" />
+      Ваш браузер не поддерживает видео.
+    </video>
+    <div class="hero-content">
+      <h1>Эксклюзивные ручки под заказ</h1>
+      <p>Уникальные мебельные ручки с кожаной обивкой и редкими материалами</p>
+      <button id="order-btn">Заказать сейчас</button>
     </div>
   </section>
 
-  <section id="prices" class="section">
-    <h2>Примерные цены</h2>
-    <ul>
-      <li>Ручка с кожаной обивкой: от 3500 ₽</li>
-      <li>Металлическая ручка с эмалью: от 4500 ₽</li>
-      <li>Комбинированные модели: от 6000 ₽</li>
-      <li>Ручка с янтарной инкрустацией: от 12000 ₽</li>
-    </ul>
+  <section id="about" class="section about-section">
+    <h2>О нас</h2>
+    <p>
+      Мы создаём мебельные ручки, которые делают ваш интерьер уникальным и стильным. Каждый заказ — это настоящее произведение искусства с использованием высококачественной кожи и редких материалов.
+    </p>
   </section>
 
-  <section id="order" class="section">
-    <h2>Оставить заявку</h2>
-    <form id="orderForm" novalidate>
+  <section id="products" class="section products-section">
+    <h2>Наши продукты</h2>
+    <div class="products-grid">
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Ручка с кожей цвета янтарь" />
+        <h3>Ручка "Янтарь"</h3>
+        <p>Кожаная обивка янтарного цвета, корпус из латуни.</p>
+        <p class="price">Цена: 3500 ₽</p>
+      </article>
+
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=600&q=80" alt="Бирюзовая ручка с кожей" />
+        <h3>Ручка "Бирюза"</h3>
+        <p>Бирюзовая кожа, современный дизайн, сталь с покрытием.</p>
+        <p class="price">Цена: 4000 ₽</p>
+      </article>
+
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Кремовая кожаная ручка" />
+        <h3>Ручка "Крем"</h3>
+        <p>Нежная кремовая кожа, эргономичная форма, прочный сплав.</p>
+        <p class="price">Цена: 3200 ₽</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="gallery" class="section gallery-section">
+    <h2>Галерея</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Ручка с кожей янтарь" data-full="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80" />
+      <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=600&q=80" alt="Бирюзовая ручка" data-full="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80" />
+      <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Кремовая кожаная ручка" data-full="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80" />
+    </div>
+  </section>
+
+  <section id="order" class="section order-section">
+    <h2>Оформить заказ</h2>
+    <form id="order-form">
       <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" placeholder="Ваше имя" required minlength="2" />
-      
+      <input type="text" id="name" name="name" placeholder="Ваше имя" required />
+
       <label for="phone">Телефон:</label>
-      <input type="tel" id="phone" name="phone" placeholder="+7 999 999 99 99" required pattern="^\+?\d{10,15}$" />
-      
+      <input type="tel" id="phone" name="phone" placeholder="+7XXXXXXXXXX" required pattern="^\+7\d{10}$" />
+
       <label for="product">Выберите продукт:</label>
       <select id="product" name="product" required>
-        <option value="" disabled selected>-- выберите --</option>
-        <option value="leather">Ручка с кожей</option>
-        <option value="metal">Металлическая ручка</option>
-        <option value="combo">Комбинированная</option>
-        <option value="amber">Ручка с янтарём</option>
+        <option value="">-- Выберите --</option>
+        <option value="Янтарь">Ручка "Янтарь" - 3500 ₽</option>
+        <option value="Бирюза">Ручка "Бирюза" - 4000 ₽</option>
+        <option value="Крем">Ручка "Крем" - 3200 ₽</option>
       </select>
-      
+
       <button type="submit">Отправить заявку</button>
     </form>
   </section>
 
-  <section id="contacts" class="section">
-    <h2>Контакты</h2>
-    <p>Телефон: <a href="tel:+79999999999">+7 999 999 99 99</a></p>
-    <p>Email: <a href="mailto:info@exquisitehandles.ru">info@exquisitehandles.ru</a></p>
-    <p>Адрес: г. Москва, ул. Мебельная, 12</p>
-  </section>
-</main>
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="" />
+    <div class="caption"></div>
+  </div>
 
+  <footer>
+    <p>© 2025 SmartARS. Все права защищены.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
-<script src="scripts.js"></script>
 </html>
