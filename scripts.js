@@ -1,76 +1,55 @@
-// Меню для мобильных устройств
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
+// Анимация "полка" при переходе по меню
+const navLinks = document.querySelectorAll('.nav-link');
+const shelfOverlay = document.getElementById('shelf-animation');
+const shelfDoor = shelfOverlay.querySelector('.shelf-door');
 
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
+// Плавный скролл с эффектом "дверца"
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
 
-// Галерея (Lightbox)
-const galleryImages = document.querySelectorAll('.gallery-grid img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('.lightbox-img');
-const caption = lightbox.querySelector('.caption');
-const closeBtn = lightbox.querySelector('.close');
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
 
-galleryImages.forEach(img => {
-  img.addEventListener('click', () => {
-    lightbox.style.display = 'flex';
-    lightboxImg.src = img.dataset.full;
-    lightboxImg.alt = img.alt;
-    caption.textContent = img.alt;
+    // Анимация полки
+    shelfOverlay.style.display = 'flex';
+    setTimeout(() => {
+      shelfOverlay.classList.add('open');
+    }, 50);
+
+    // Подождать, потом перейти
+    setTimeout(() => {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }, 600);
+
+    // Скрыть дверцу
+    setTimeout(() => {
+      shelfOverlay.classList.remove('open');
+      shelfOverlay.style.display = 'none';
+    }, 1300);
   });
 });
 
-closeBtn.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-});
-
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) lightbox.style.display = 'none';
-});
-
-// Скролл к форме заказа
-const orderBtn = document.getElementById('order-btn');
+// Кнопка "Заказать" — скролл к заказу
+const orderBtn = document.querySelector('.order-scroll-btn');
 const orderSection = document.getElementById('order');
 
 orderBtn.addEventListener('click', () => {
   orderSection.scrollIntoView({ behavior: 'smooth' });
 });
 
-// Валидация формы заказа
-const orderForm = document.getElementById('order-form');
+// Плавное появление секций при прокрутке
+const sections = document.querySelectorAll('.section');
 
-orderForm.addEventListener('submit', e => {
-  e.preventDefault();
-
-  if (!orderForm.checkValidity()) {
-    alert('Пожалуйста, заполните все поля правильно.');
-    return;
-  }
-
-  const name = orderForm.name.value;
-  const product = orderForm.product.value;
-
-  alert(`Спасибо, ${name}! Ваша заявка на "${product}" принята. Мы скоро с вами свяжемся.`);
-
-  orderForm.reset();
-});
-
-// Анимации при скролле (IntersectionObserver)
-const sections = document.querySelectorAll('.section, .hero-content');
-
-const observer = new IntersectionObserver(entries => {
+const revealOnScroll = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.remove('hidden');
+      revealOnScroll.unobserve(entry.target);
     }
   });
-}, {
-  threshold: 0.2
-});
+}, { threshold: 0.2 });
 
 sections.forEach(section => {
-  section.classList.add('hidden');
-  observer.observe(section);
+  revealOnScroll.observe(section);
 });

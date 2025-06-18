@@ -2,112 +2,58 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SmartARS - Эксклюзивные ручки с кожей</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartARS | Дизайнерские ручки</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
+  <header class="header">
+    <div class="logo">SmartARS</div>
     <nav class="navbar">
-      <div class="logo">SmartARS</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">О нас</a></li>
-        <li><a href="#products">Продукты</a></li>
-        <li><a href="#gallery">Галерея</a></li>
-        <li><a href="#order">Заказать</a></li>
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link">Главная</a></li>
+        <li><a href="#about" class="nav-link">О нас</a></li>
+        <li><a href="#products" class="nav-link">Продукты</a></li>
+        <li><a href="#order" class="nav-link">Заказ</a></li>
       </ul>
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span><span></span><span></span>
-      </div>
     </nav>
   </header>
 
-  <section class="hero" id="hero">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="https://cdn.pixabay.com/vimeo/323850539/Background%20Luxury%20Motion%20Graphics%20%233605%20-%2051800.mp4" type="video/mp4" />
-      Ваш браузер не поддерживает видео.
-    </video>
+  <!-- Эффектная обложка -->
+  <section class="hero" id="home">
     <div class="hero-content">
-      <h1>Эксклюзивные ручки под заказ</h1>
-      <p>Уникальные мебельные ручки с кожаной обивкой и редкими материалами</p>
-      <button id="order-btn">Заказать сейчас</button>
+      <h1>Эксклюзивные ручки для мебели</h1>
+      <p>Сделано вручную. Кожа. Металл. Искусство.</p>
+      <button class="order-scroll-btn">Заказать</button>
     </div>
   </section>
 
-  <section id="about" class="section about-section">
-    <h2>О нас</h2>
-    <p>
-      Мы создаём мебельные ручки, которые делают ваш интерьер уникальным и стильным. Каждый заказ — это настоящее произведение искусства с использованием высококачественной кожи и редких материалов.
-    </p>
-  </section>
-
-  <section id="products" class="section products-section">
-    <h2>Наши продукты</h2>
-    <div class="products-grid">
-      <article class="product-card">
-        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Ручка с кожей цвета янтарь" />
-        <h3>Ручка "Янтарь"</h3>
-        <p>Кожаная обивка янтарного цвета, корпус из латуни.</p>
-        <p class="price">Цена: 3500 ₽</p>
-      </article>
-
-      <article class="product-card">
-        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=600&q=80" alt="Бирюзовая ручка с кожей" />
-        <h3>Ручка "Бирюза"</h3>
-        <p>Бирюзовая кожа, современный дизайн, сталь с покрытием.</p>
-        <p class="price">Цена: 4000 ₽</p>
-      </article>
-
-      <article class="product-card">
-        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Кремовая кожаная ручка" />
-        <h3>Ручка "Крем"</h3>
-        <p>Нежная кремовая кожа, эргономичная форма, прочный сплав.</p>
-        <p class="price">Цена: 3200 ₽</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="gallery" class="section gallery-section">
-    <h2>Галерея</h2>
-    <div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Ручка с кожей янтарь" data-full="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80" />
-      <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=600&q=80" alt="Бирюзовая ручка" data-full="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=80" />
-      <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Кремовая кожаная ручка" data-full="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80" />
-    </div>
-  </section>
-
-  <section id="order" class="section order-section">
-    <h2>Оформить заказ</h2>
-    <form id="order-form">
-      <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" placeholder="Ваше имя" required />
-
-      <label for="phone">Телефон:</label>
-      <input type="tel" id="phone" name="phone" placeholder="+7XXXXXXXXXX" required pattern="^\+7\d{10}$" />
-
-      <label for="product">Выберите продукт:</label>
-      <select id="product" name="product" required>
-        <option value="">-- Выберите --</option>
-        <option value="Янтарь">Ручка "Янтарь" - 3500 ₽</option>
-        <option value="Бирюза">Ручка "Бирюза" - 4000 ₽</option>
-        <option value="Крем">Ручка "Крем" - 3200 ₽</option>
-      </select>
-
-      <button type="submit">Отправить заявку</button>
-    </form>
-  </section>
-
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="" />
-    <div class="caption"></div>
+  <!-- Полка-анимация -->
+  <div id="shelf-animation" class="shelf-overlay">
+    <div class="shelf-door"></div>
   </div>
 
-  <footer>
+  <!-- Заготовка для других блоков -->
+  <section id="about" class="section hidden">
+    <h2>О нас</h2>
+    <p>SmartARS — это мастерская дизайнерских решений. Мы создаём мебельные ручки с душой.</p>
+  </section>
+
+  <section id="products" class="section hidden">
+    <h2>Наши продукты</h2>
+    <p>Каждое изделие — это премиум-класс: кожа, медь, бронза, дерево.</p>
+  </section>
+
+  <section id="order" class="section hidden">
+    <h2>Сделать заказ</h2>
+    <p>Выберите модель и оставьте заявку — мы свяжемся с вами!</p>
+  </section>
+
+  <footer class="footer">
     <p>© 2025 SmartARS. Все права защищены.</p>
   </footer>
 
+  <script src="scripts.js"></script>
 </body>
-
 </html>
